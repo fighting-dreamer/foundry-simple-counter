@@ -17,12 +17,18 @@ contract SimpleCounter is AccessControl {
     }
 
     uint256 public number;
+    constructor() {
+        // the "grantRole" expects if the caller of the func have the role who can alter or set another address for the given role.
+        // since, default-admin is its own "admin role"
+        // "grantRole" and "_grantRole" are differnt 
+        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender); 
+    }
 
-    function setNumber(uint256 newNumber) public {
+    function setNumber(uint256 newNumber) public canSetNumber {
         number = newNumber;
     }
 
-    function increment() public {
+    function increment() public canOperate {
         number++;
     }
 }
