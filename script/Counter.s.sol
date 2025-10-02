@@ -13,6 +13,7 @@ contract SimpleCounterScript is Script {
         uint privateKey = vm.envUint("WALLET_PRIVATE_KEY");
         address addr = vm.addr(privateKey);
         console.log("address", addr);
+        console.log("Chain ID:", block.chainid);
         vm.startBroadcast(privateKey);
         counter = new SimpleCounter();
         vm.stopBroadcast();
