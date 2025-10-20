@@ -3,8 +3,8 @@ pragma solidity ^0.8.28;
 
 import {AccessControl} from "@openzeppelin/contracts/access/AccessControl.sol";
 contract RoleBasedAccess is AccessControl {
-    bytes32 constant public STUDENT_ROLE = keccak256("STUDENT_ROLE");
-    bytes32 constant public PROFESSOR_ROLE = keccak256("PROFESSOR_ROLE");
+    bytes32 public constant STUDENT_ROLE = keccak256("STUDENT_ROLE");
+    bytes32 public constant PROFESSOR_ROLE = keccak256("PROFESSOR_ROLE");
 
     constructor() {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);

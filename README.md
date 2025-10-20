@@ -1,66 +1,33 @@
-## Foundry
+## Counter
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This contract give user the functionality to increment counter or decrement counter.
 
-Foundry consists of:
+### V1 : 
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+1. just a simple counter.
+2. adding test
+3. adding deployment logic
+4. adding typescript usage logic functions.
 
-## Documentation
+### V2 : 
 
-https://book.getfoundry.sh/
+1. adding an ownable to this.
+2. adding test
+3. adding deployment logic
+4. adding typescript usage logic functions.
 
-## Usage
+### V3 :
 
-### Build
+1. adding role based access.
+    1. owner
+    2. user that can increment or decrement
+2. adding test
+3. adding deployment logic
+4. adding typescript usage logic functions.
 
-```shell
-$ forge build
-```
+### V4 : 
 
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+1. can act on contract till certain block number. a time lock contract.
+2. adding test
+3. adding deployment logic
+4. adding typescript usage logic functions.

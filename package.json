@@ -1,0 +1,39 @@
+{
+  "name": "foundry-simple-counter",
+  "version": "1.0.0",
+  "description": "This contract give user the functionality to increment counter or decrement counter.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky",
+    "commit": "commit",
+    "eslint": "npx eslint . --ext .js,.mjs,.cjs",
+    "lint:sol": "solhint 'src/**/*.sol'",
+    "lint:sol:fix": "solhint 'src/**/*.sol' --fix",
+    "format:sol": "prettier --write 'src/**/*.sol'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-fighting-dreamer:fighting-dreamer/foundry-simple-counter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@commitlint/prompt-cli": "^20.1.0",
+    "@eslint/js": "^9.38.0",
+    "eslint": "^9.38.0",
+    "globals": "^16.4.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.6.2",
+    "prettier-plugin-solidity": "^2.1.0",
+    "solhint": "^6.0.1"
+  }
+}
