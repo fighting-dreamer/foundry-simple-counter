@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.26;
 
-import {AccessControl} from "@openzeppelin/contracts/access/AccessControl.sol";
+import { AccessControl } from "@openzeppelin/contracts/access/AccessControl.sol";
 
 contract SimpleCounter is AccessControl {
     /**
@@ -12,6 +12,7 @@ contract SimpleCounter is AccessControl {
     /**
      * @notice
      */
+
     modifier canSetNumber() {
         require(hasRole(SET_NUMBER_ROLE, msg.sender), "Require number setter role");
         _;
@@ -25,7 +26,8 @@ contract SimpleCounter is AccessControl {
     uint256 public number;
 
     constructor() {
-        // the "grantRole" expects if the caller of the func have the role who can alter or set another address for the given role.
+        // the "grantRole" expects if the caller of the func have the role who can alter or set another address for the
+        // given role.
         // since, default-admin is its own "admin role"
         // "grantRole" and "_grantRole" are differnt
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
