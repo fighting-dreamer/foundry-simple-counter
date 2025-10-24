@@ -1,3 +1,4 @@
-contracts/**
-!contracts/utils/
-!contracts/utils/SafeMath.sol
+node_modules/
+lib/
+cache/
+out/
