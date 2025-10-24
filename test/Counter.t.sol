@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.13;
+pragma solidity ^0.8.26;
 
 import {Test, console} from "forge-std/Test.sol";
 import {SimpleCounterV1} from "../src/SimpleCounter.sol";
@@ -13,6 +13,8 @@ contract SimpleCounterTest is Test {
 
     function test_Increment() public {
         counter.increment();
-        assertEq(counter.getNumber(), 1);
+        uint256 newNumber = counter.getNumber();
+        console.log("New number is:", newNumber);
+        assertEq(newNumber, 1);
     }
 }

@@ -6,7 +6,7 @@ libs = ["lib"]
 # If you prefer to manage remappings manually, use the 'remappings' key instead.
 # For example:
 remappings = [
-    "forge-std/=lib/forge-std/src/",
+    "forge-std/=lib/forge-std/src",
     "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
 ]
 
