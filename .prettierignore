@@ -1,9 +1,8 @@
-    # Ignore a specific file
-    src/ignored-file.js
+# Ignore a specific file
+src/ignored-file.js
 
-    # Ignore all files in a specific folder
-    dist/
+# Ignore all files in a specific folder
+dist/
 
-    # Ignore all files with a certain extension
-    **/*.min.js
-    # **/*.sol
+# Ignore all files with a certain extension
+**/*.min.js

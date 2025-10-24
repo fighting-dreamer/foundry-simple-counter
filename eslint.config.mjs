@@ -1,7 +1,6 @@
 import js from "@eslint/js";
 import globals from "globals";
 import { defineConfig } from "eslint/config";
-import stylistic from '@stylistic/eslint-plugin'
 
 
 export default defineConfig([
@@ -45,13 +44,4 @@ export default defineConfig([
     ],
     languageOptions: { sourceType: "module" },
   },
-  // stylistic : https://eslint.style/rules
-  {
-    plugins: {
-      '@staylistic': stylistic
-    },
-    rules: {
-      '@stylistic/indent': ['error', 2],
-    }
-  }
 ]);
