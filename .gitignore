@@ -184,6 +184,7 @@ Thumbs.db
 # Hardhat, Node, and npm files
 node_modules/
 cache/
+cache_hardhat
 artifacts/
 typechain/
 typechain-types/
