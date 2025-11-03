@@ -7,8 +7,7 @@ import {SimpleCounterV2} from "../src/SimpleCounter.sol";
 contract SimpleCounterTest is Test {
     SimpleCounterV2 public counter;
 
-    function setUp() public {
-    }
+    function setUp() public {}
 
     function test_Ownership() public {
         counter = new SimpleCounterV2();
@@ -16,8 +15,9 @@ contract SimpleCounterTest is Test {
         counter.increment();
 
         address otherUser = makeAddr("otherAccount");
-        vm.prank(otherUser);
         
+        vm.expectRevert();
+        vm.prank(otherUser);
         counter.increment();
     }
 
