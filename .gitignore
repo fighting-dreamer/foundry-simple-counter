@@ -201,3 +201,7 @@ coverage.json
 .idea/
 .log/
 .cache/
+
+############## INCLUDE ############
+# you can use negation patterns (!) within a .gitignore file to explicitly include files that would otherwise be ignored by a broader pattern.
+!test.log

@@ -5,6 +5,8 @@ import {Test, console} from "forge-std/Test.sol";
 import {SimpleCounterV3} from "../src/SimpleCounter.sol";
 
 contract SimpleCounterTest is Test {
+    error AccessControlUnauthorizedAccount(address account, bytes32 role);
+
     SimpleCounterV3 public counter;
     address public professor;
     address public student1;
@@ -26,7 +28,7 @@ contract SimpleCounterTest is Test {
         // giving student role to some addresses
         // you can't use RoleBasedAccess.STUDENT_ROLE or RoleBasedAccess.PROFESSOR_ROLE
         // also, note that, you have made a function call using parenthesis, its "STUDENT_ROLE()", not just "STUDENT_ROLE"
-        counter.grantRole(counter.STUDENT_ROLE(), student1); 
+        counter.grantRole(counter.STUDENT_ROLE(), student1);
         counter.grantRole(counter.STUDENT_ROLE(), student2);
         // giving professor role to some addresses
         counter.grantRole(counter.PROFESSOR_ROLE(), professor);
@@ -42,14 +44,22 @@ contract SimpleCounterTest is Test {
         console.log(got);
         uint expected = 1;
         assertEq(expected, got);
+
+        vm.prank(student2);
+        counter.increment();
+        got = counter.getNumber();
+        console.log(got);
+        expected = 2;
+        assertEq(expected, got);
     }
 
-    // function test_Increment() public {
-    //     counter = new SimpleCounterV2();
-    //     console.log(address(counter));
-    //     counter.increment();
-    //     uint256 newNumber = counter.getNumber();
-    //     console.log("New number is:", newNumber);
-    //     assertEq(newNumber, 1);
-    // }
+    function test_Revert_to_Increment() public {
+        vm.expectPartialRevert(AccessControlUnauthorizedAccount.selector);
+        vm.prank(admin);
+        counter.increment();
+
+        uint256 newNumber = counter.getNumber();
+        console.log("New number is:", newNumber);
+        assertEq(newNumber, 0);
+    }
 }

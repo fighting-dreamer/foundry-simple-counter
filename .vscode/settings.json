@@ -1,7 +1,12 @@
 {
-    "files.exclude": {
-        "**/.lock": true,
-        "**/node_modules": true,
-        "*.log": true,
+  "files": {
+    "exclude": {
+      "**/.lock": true,
+      "**/node_modules": true,
+      "*.log": true
+    },
+    "include": {
+      "test.log": true
     }
+  }
 }
