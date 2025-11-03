@@ -2,23 +2,25 @@
 pragma solidity ^0.8.26;
 
 import {AccessControl} from "@openzeppelin/contracts/access/AccessControl.sol";
+
 contract RoleBasedAccess is AccessControl {
-    bytes32 constant public STUDENT_ROLE = keccak256("STUDENT_ROLE");
-    bytes32 constant public PROFESSOR_ROLE = keccak256("PROFESSOR_ROLE");
+    bytes32 public constant STUDENT_ROLE = keccak256("STUDENT_ROLE");
+    bytes32 public constant PROFESSOR_ROLE = keccak256("PROFESSOR_ROLE");
 
     constructor() {
+        // The account that deploys the contract gets the admin role
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
     }
 
-    function submitTest() public view returns (string memory) {
-        require(hasRole(STUDENT_ROLE, msg.sender), "you are not a student");
+    // function submitTest() public view returns (string memory) {
+    //     require(hasRole(STUDENT_ROLE, msg.sender), "you are not a student");
 
-        return "Test Submitted";
-    }
+    //     return "Test Submitted";
+    // }
 
-    function gradeTest() public view returns (string memory) {
-        require(hasRole(PROFESSOR_ROLE, msg.sender), "You are not a professor.");
+    // function gradeTest() public view returns (string memory) {
+    //     require(hasRole(PROFESSOR_ROLE, msg.sender), "You are not a professor.");
 
-        return "Test Graded";
-    }
+    //     return "Test Graded";
+    // }
 }

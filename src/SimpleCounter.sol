@@ -1,16 +1,17 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.26;
 
-import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
-contract SimpleCounterV2 is Ownable {
-    uint256 private number = 0;
-    constructor() Ownable(msg.sender) {}
+import {RoleBasedAccess} from "./RoleBasedAccess.sol";
 
-    function increment() public onlyOwner {
+contract SimpleCounterV3 is RoleBasedAccess {
+    uint256 private number = 0;
+    constructor() RoleBasedAccess() {}
+
+    function increment() public onlyRole(RoleBasedAccess.STUDENT_ROLE) {
         number++;
     }
 
-    function decrement() public onlyOwner {
+    function decrement() public onlyRole(RoleBasedAccess.PROFESSOR_ROLE) {
         number--;
     }
 
@@ -19,10 +20,10 @@ contract SimpleCounterV2 is Ownable {
     }
 }
 
-contract SomeContract {
-    uint256 private number;
+// contract SomeContract {
+//     uint256 private number;
 
-    function somefunc() public view returns(uint256) {
-        return number;
-    }
-}
+//     function somefunc() public view returns(uint256) {
+//         return number;
+//     }
+// }
