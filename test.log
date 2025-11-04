@@ -1,0 +1,9 @@
+Compiling 1 files with Solc 0.8.28
+Solc 0.8.28 finished in 545.72ms
+Compiler run successful!
+
+Ran 3 tests for test/Counter.t.sol:SimpleCounterTest
+[PASS] test_Revert_to_Increment() (gas: 20514)
+Logs:
+  New number is: 0
+

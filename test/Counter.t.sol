@@ -62,4 +62,16 @@ contract SimpleCounterTest is Test {
         console.log("New number is:", newNumber);
         assertEq(newNumber, 0);
     }
+
+    function test_Revert_to_decrement() public {
+        vm.startPrank(student1);
+        counter.increment();
+        console.log("test_Revert_to_decrement", counter.getNumber());
+        assertEq(counter.getNumber(), 1);
+
+        vm.expectPartialRevert(AccessControlUnauthorizedAccount.selector);
+        counter.decrement();
+
+        vm.stopPrank();
+    }
 }
