@@ -35,4 +35,16 @@ contract PayableCounter is Test {
         assertEq(testAddr.balance, 1 ether);
         console.log("test addr balance : ", testAddr.balance);
     }
+
+    function test_Revert_withdraw_more_than_held() public {
+        vm.deal(address(counter), 0.5 ether);
+        address testAddr = makeAddr("test");
+        
+        vm.prank(student);
+        vm.expectRevert();
+        counter.withdraw(testAddr, 1 ether);
+
+        assertEq(testAddr.balance, 1 ether);
+        console.log("test addr balance : ", testAddr.balance);
+    } 
 }

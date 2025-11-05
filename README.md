@@ -40,3 +40,4 @@ This contract give user the functionality to increment counter or decrement coun
 ### v6 : 
 
 1. sending or owning tokens for erc-20
+2. implementing withdraw function for erc-20
