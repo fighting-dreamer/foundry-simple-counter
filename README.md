@@ -31,3 +31,12 @@ This contract give user the functionality to increment counter or decrement coun
 2. adding test
 3. adding deployment logic
 4. adding typescript usage logic functions.
+
+### V5 : 
+
+1. making increment payable for eth
+2. implement a withdraw function
+
+### v6 : 
+
+1. sending or owning tokens for erc-20

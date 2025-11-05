@@ -1,0 +1,8 @@
+ConunterWithTimelock:test_IncrementBatch_delay_less_minDelay() (gas: 27286)
+ConunterWithTimelock:test_Increment_success_After_minDelay_and_authorized() (gas: 143325)
+ConunterWithTimelock:test_Revert_IncrementBatch_before_minDelay() (gas: 63456)
+ConunterWithTimelock:test_Revert_Increment_after_mindelay_and_not_authorized() (gas: 101532)
+PayableCounter:test_paying_to_increment_function() (gas: 52861)
+SimpleCounterTest:test_Revert_to_Increment() (gas: 20470)
+SimpleCounterTest:test_Revert_to_decrement() (gas: 47797)
+SimpleCounterTest:test_increment() (gas: 53876)
