@@ -24,4 +24,15 @@ contract PayableCounter is Test {
         console.log("counter balance ", address(counter).balance);
         assertEq(balance + 1 ether, afterCallBalance);
     }
+
+    function test_withdraw() public {
+        vm.deal(address(counter), 10 ether);
+        address testAddr = makeAddr("test");
+        
+        vm.prank(student);
+        counter.withdraw(testAddr, 1 ether);
+
+        assertEq(testAddr.balance, 1 ether);
+        console.log("test addr balance : ", testAddr.balance);
+    }
 }
